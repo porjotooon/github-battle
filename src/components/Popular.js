@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { fetchPopularRepos } from '../utils/api'
 
+
 import './Popular.css'
 
 const LanguageNavBar = ({ selected, onUpdateLanguage }) => {
@@ -26,6 +27,18 @@ const LanguageNavBar = ({ selected, onUpdateLanguage }) => {
 LanguageNavBar.propTypes = {
     selected: PropTypes.string.isRequired,
     onUpdateLanguage: PropTypes.func.isRequired
+}
+
+const ReposGrid = ({ repos }) => {
+    return(
+        <ul>
+            <pre>{JSON.stringify(repos, null, 2)}</pre>
+        </ul>
+    )
+}
+
+ReposGrid.propTypes = {
+    repos: PropTypes.array.isRequired
 }
 
 class Popular extends Component {
@@ -87,7 +100,7 @@ class Popular extends Component {
 
                 {error && <p>{error}</p>}
 
-                {repos && <pre>{JSON.stringify(repos, null, 2)}</pre>}
+                {repos && <ReposGrid repos={repos}/>}
             </>
         )
     }
