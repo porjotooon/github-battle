@@ -22,6 +22,7 @@ const LanguageNavBar = ({ selected, onUpdateLanguage }) => {
     )
 }
 
+
 LanguageNavBar.propTypes = {
     selected: PropTypes.string.isRequired,
     onUpdateLanguage: PropTypes.func.isRequired
@@ -40,6 +41,12 @@ class Popular extends Component {
         this.updateLanguage = this.updateLanguage.bind(this)
         this.isLoading = this.isLoading.bind(this)
     }
+
+    // for re-rendering repos of selected language
+    componentDidMount(){
+        this.updateLanguage(this.state.selectedLanguage)
+    }
+
     //handler for updating language
     updateLanguage(selectedLanguage){
         this.setState({
