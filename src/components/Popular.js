@@ -33,15 +33,38 @@ class Popular extends Component {
 
         //state for language
         this.state = {
-            selectedLanguage: 'All'
+            selectedLanguage: 'All',
+            repos: null,
+            error: null
         }
         this.updateLanguage = this.updateLanguage.bind(this)
+        this.isLoading = this.isLoading.bind(this)
     }
     //handler for updating language
     updateLanguage(selectedLanguage){
         this.setState({
-            selectedLanguage
+            selectedLanguage,
+            error: null,
+            repos: null //repos & error being null means it's loading
         })
+
+        fetchPopularRepos(selectedLanguage)
+            .then(repos => this.setState({
+                repos,
+                error: null,
+            }))
+            .catch(() => {
+                console.warn('Error in fetching repos: ', this.state.error)
+                this.setState({
+                    error: `There was an error fetching the repositories`                    
+                })
+            })           
+            
+    }
+
+    //handler for returning bool if it's loading or not
+    isLoading(){
+        return this.state.repos === null && this.state.error === null
     }
 
     render() {
