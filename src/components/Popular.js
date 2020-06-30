@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
 import './Popular.css'
 
 const LanguageNavBar = ({ selected, onUpdateLanguage }) => {
@@ -17,6 +19,11 @@ const LanguageNavBar = ({ selected, onUpdateLanguage }) => {
             ))}
         </ul>
     )
+}
+
+LanguageNavBar.propTypes = {
+    selected: PropTypes.string.isRequired,
+    onUpdateLanguage: PropTypes.func.isRequired
 }
 
 class Popular extends Component {
