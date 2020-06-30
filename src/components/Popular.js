@@ -68,13 +68,19 @@ class Popular extends Component {
     }
 
     render() {
-        const { selectedLanguage } = this.state
+        const { selectedLanguage, repos, error } = this.state
         return (
             <>
                 <LanguageNavBar 
                     selected={selectedLanguage}
                     onUpdateLanguage={this.updateLanguage}
                 />
+
+                {this.isLoading() && <p>LOADING</p>}
+
+                {error && <p>{error}</p>}
+
+                {repos && <pre>{JSON.stringify(repos, null, 2)}</pre>}
             </>
         )
     }
