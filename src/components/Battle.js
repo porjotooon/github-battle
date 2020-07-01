@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { FaUserFriends, FaFighterJet, FaTrophy } from 'react-icons/fa'
+import PropTypes from 'prop-types'
 
 const Instructions = () => {
     return(
@@ -57,7 +58,7 @@ class Player extends Component {
                       value={this.state.username}
                       onChange={this.handleChange}
                     />
-                    <button className='btn btn-dark' type='submit' disabled={!this.state.username}>
+                    <button className='btn dark-btn' type='submit' disabled={!this.state.username}>
                         Submit
                     </button>
                 </div>
@@ -65,11 +66,17 @@ class Player extends Component {
         )
     }
 }
+
+Player.propTypes = {
+    label: PropTypes.string.isRequired,
+    onSubmit: PropTypes.func.isRequired
+}
 export default class Battle extends Component {
     render(){
         return(
             <>
                 <Instructions />
+                <Player label='Label' onSubmit={(value) => console.log('value')}/>
             </>
         )
     }
