@@ -72,11 +72,38 @@ Player.propTypes = {
     onSubmit: PropTypes.func.isRequired
 }
 export default class Battle extends Component {
+    constructor(props){
+        super(props)
+        
+        this.state = {
+            playerOne: null,
+            playerTwo: null
+        }
+        this.handleSubmit = this.handleSubmit.bind(this)
+    }
+    handleSubmit(id, player){
+        this.setState({
+            [id]: player
+        })
+    }
     render(){
+        const { playerOne, playerTwo } = this.state
         return(
             <>
                 <Instructions />
-                <Player label='Label' onSubmit={(value) => console.log('value')}/>
+                <div className='players-container'>
+                    <h1 className='header-lg center-text'>Players</h1>
+                </div>
+                <div className='row space-around'>
+                    {playerOne === null && (
+                        <Player label='Player One' 
+                                onSubmit={(player) => this.handleSubmit('playerOne', player)}/>
+                    )}
+                    {playerTwo === null && (
+                        <Player label='Player Two' 
+                                onSubmit={(player) => this.handleSubmit('playerTwo', player)}/>
+                    )}
+                </div>
             </>
         )
     }
