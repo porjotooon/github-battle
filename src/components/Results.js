@@ -76,33 +76,38 @@ export default class Results extends React.Component {
     }
 
     return (
-      <div className='grid space-around container-sm'>
+      <>
+        <div className='grid space-around container-sm'>
 
-        <div className='card bg-light'>
-          <Card 
-          header={winner.score === loser.score ? 'Tie' : 'Winner'}
-          subheader={winner.score.toLocaleString()}
-          name={winner.profile.login}
-          href={winner.profile.html_url}
-          avatar={winner.profile.avatar_url}
-          >
-            {ProfileList(winner.profile)}
-          </Card>
-          
+          <div className='card bg-light'>
+            <Card 
+            header={winner.score === loser.score ? 'Tie' : 'Winner'}
+            subheader={winner.score.toLocaleString()}
+            name={winner.profile.login}
+            href={winner.profile.html_url}
+            avatar={winner.profile.avatar_url}
+            >
+              {ProfileList(winner.profile)}
+            </Card>            
+          </div>
+
+          <div className='card bg-light'>
+            <Card 
+              header={winner.score === loser.score ? 'Tie' : 'Loser'}
+              subheader={loser.score.toLocaleString()}
+              name={loser.profile.login}
+              href={loser.profile.html_url}
+              avatar={loser.profile.avatar_url}
+            >
+              {ProfileList(loser.profile)}
+            </Card>            
+          </div>
+
         </div>
-        <div className='card bg-light'>
-        <Card 
-          header={winner.score === loser.score ? 'Tie' : 'Loser'}
-          subheader={loser.score.toLocaleString()}
-          name={loser.profile.login}
-          href={loser.profile.html_url}
-          avatar={loser.profile.avatar_url}
-        >
-          {ProfileList(loser.profile)}
-        </Card>
-          
-        </div>
-      </div>
+        <button className='btn dark-btn btn-space' onClick={this.props.onReset}>
+          Reset
+        </button>
+      </>
     )
   }
 }
