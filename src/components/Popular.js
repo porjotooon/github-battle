@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { fetchPopularRepos } from '../utils/api'
 import { FaUser, FaStar, FaCodeBranch, FaExclamationTriangle } from 'react-icons/fa'
+import Card from './Card'
 
 
 const LanguageNavBar = ({ selected, onUpdateLanguage }) => {
@@ -36,14 +37,13 @@ const ReposGrid = ({ repos }) => {
                 const { login, avatar_url } = owner
 
                 return (
-                    <li key={html_url} className='repo bg-light'>
-                        <h4 className='header-lg center-text'>
-                            #{index+1}
-                        </h4>
-                        <img className='avatar' alt={`Avatar for ${login}`} src={avatar_url}/>
-                        <h2 className='center-text'>
-                            <a className='link' href={html_url}>{login}</a>
-                        </h2>
+                    <li key={html_url} className='card bg-light'>
+                        <Card 
+                            header={`#${index+1}`}
+                            name={login}
+                            href={html_url}
+                            avatar={avatar_url}
+                            >
                         <ul className='card-list'>
                             <li>
                                 <FaUser color='rgb(255,191,116)' size={22}/>
@@ -64,6 +64,8 @@ const ReposGrid = ({ repos }) => {
                                 {open_issues.toLocaleString()} open issues
                             </li>
                         </ul>
+                        </Card>
+                        
                     </li>
                 )
             })}
@@ -132,7 +134,7 @@ class Popular extends Component {
 
                 {this.isLoading() && <p>LOADING</p>}
 
-                {error && <p>{error}</p>}
+                {error && <p className='center-text error'>{error}</p>}
 
                 {repos && <ReposGrid repos={repos}/>}
             </>
