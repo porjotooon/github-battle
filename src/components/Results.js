@@ -86,7 +86,7 @@ export default class Results extends React.Component {
       <>
         <div className='grid space-around container-sm'>
 
-          <div className='card bg-light'>
+
             <Card 
             header={winner.score === loser.score ? 'Tie' : 'Winner'}
             subheader={winner.score.toLocaleString()}
@@ -95,10 +95,9 @@ export default class Results extends React.Component {
             avatar={winner.profile.avatar_url}
             >
               {ProfileList(winner.profile)}
-            </Card>            
-          </div>
+            </Card> 
 
-          <div className='card bg-light'>
+
             <Card 
               header={winner.score === loser.score ? 'Tie' : 'Loser'}
               subheader={loser.score.toLocaleString()}
@@ -107,8 +106,7 @@ export default class Results extends React.Component {
               avatar={loser.profile.avatar_url}
             >
               {ProfileList(loser.profile)}
-            </Card>            
-          </div>
+            </Card>
 
         </div>
         <button className='btn dark-btn btn-space' onClick={this.props.onReset}>
