@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/github-battle/build/static/css/main.2eb3fadd.chunk.css",
-    "main.js": "/github-battle/build/static/js/main.19bc4191.chunk.js",
-    "main.js.map": "/github-battle/build/static/js/main.19bc4191.chunk.js.map",
-    "runtime-main.js": "/github-battle/build/static/js/runtime-main.53ffe355.js",
-    "runtime-main.js.map": "/github-battle/build/static/js/runtime-main.53ffe355.js.map",
-    "static/js/2.5549967d.chunk.js": "/github-battle/build/static/js/2.5549967d.chunk.js",
-    "static/js/2.5549967d.chunk.js.map": "/github-battle/build/static/js/2.5549967d.chunk.js.map",
-    "index.html": "/github-battle/build/index.html",
-    "precache-manifest.2b83dca0ab5fde6819b5ad932cbc8e17.js": "/github-battle/build/precache-manifest.2b83dca0ab5fde6819b5ad932cbc8e17.js",
-    "service-worker.js": "/github-battle/build/service-worker.js",
-    "static/css/main.2eb3fadd.chunk.css.map": "/github-battle/build/static/css/main.2eb3fadd.chunk.css.map",
-    "static/js/2.5549967d.chunk.js.LICENSE.txt": "/github-battle/build/static/js/2.5549967d.chunk.js.LICENSE.txt"
+    "main.css": "/github-battle/static/css/main.2eb3fadd.chunk.css",
+    "main.js": "/github-battle/static/js/main.19bc4191.chunk.js",
+    "main.js.map": "/github-battle/static/js/main.19bc4191.chunk.js.map",
+    "runtime-main.js": "/github-battle/static/js/runtime-main.dee5c13a.js",
+    "runtime-main.js.map": "/github-battle/static/js/runtime-main.dee5c13a.js.map",
+    "static/js/2.5549967d.chunk.js": "/github-battle/static/js/2.5549967d.chunk.js",
+    "static/js/2.5549967d.chunk.js.map": "/github-battle/static/js/2.5549967d.chunk.js.map",
+    "index.html": "/github-battle/index.html",
+    "precache-manifest.e61e15217262b91115a91f7b58982684.js": "/github-battle/precache-manifest.e61e15217262b91115a91f7b58982684.js",
+    "service-worker.js": "/github-battle/service-worker.js",
+    "static/css/main.2eb3fadd.chunk.css.map": "/github-battle/static/css/main.2eb3fadd.chunk.css.map",
+    "static/js/2.5549967d.chunk.js.LICENSE.txt": "/github-battle/static/js/2.5549967d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.53ffe355.js",
+    "static/js/runtime-main.dee5c13a.js",
     "static/js/2.5549967d.chunk.js",
     "static/css/main.2eb3fadd.chunk.css",
     "static/js/main.19bc4191.chunk.js"
